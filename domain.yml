@@ -1,0 +1,186 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- signup:
+    use_entities: true
+- inform:
+    use_entities: true
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- cit_type:
+    use_entities: true
+- cit_pg:
+    use_entities: true
+- cit_ug:
+    use_entities: true
+- cit_scholarship:
+    use_entities: true
+- be/btech:
+    use_entities: true
+- pgcourse:
+    use_entities: true
+- training:
+    use_entities: true
+- median_salary:
+    use_entities: true
+- total_students:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- help:
+    use_entities: true
+- be:
+    use_entities: true
+- be_btech:
+    use_entities: true
+entities:
+- ctype
+- pg
+- citug
+- scholarships
+- salary
+- strength
+- pgadmission
+- training
+- be_admission
+- asname
+- cnumber
+- ecourse
+- dboard
+- flocation
+- admission
+slots:
+  asname:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  cnumber:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  ecourse:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  dboard:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  flocation:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Welcome to CIT, How can I help you today?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_help:
+  - text: How can I help you?
+  utter_cittype:
+  - text: 'Chennai Institute of Technology is a private college, approved under UGC and AICTE. It is affiliated under Anna University. '
+  utter_citpg:
+  - text: 'CIT Chennai offers ME in three specialisations, namely CAD/ CAM, Applied Electronics and CSE in the PG level. '
+  utter_citug:
+  - text: 'CIT Chennai UG courses include BE and BTech. There are a lot of specialisations for these courses like BE in Mechanical Engineering, Computer Science and Engineering, Electronics and Communication Engineering, Electrical and Electronics Engineering, Mechatronics Engineering, Civil Engineering, Bio medical Engineering, and BTech in Information Technology, Artificial Intelligence and Data Science, and Computer Science and Business Systems. '
+  utter_citscholarship:
+  - text: |-
+      Chennai Institute of Technology scholarships are of two types. One is on the basis of CIT Chennai Scholarship Test and the other is based on class 12th marks. 
+      Do you have any other queries???
+  utter_be/btech:
+  - text: |-
+      To apply for the BE/ BTech programme at Chennai Institute of Technology, candidates need to have passed Class 12 with a 50% aggregate along with TNEA score.
+       Would you like to know anything else?
+  utter_pgcourse:
+  - text: |-
+      CIT Chennai admission process starts with eligible candidates appearing for TANCET. The candidates who clear the cut off have to apply for CIT Chennai admission and appear for TANCA counselling. 
+       Do you have any queries???
+  utter_training:
+  - text: |-
+      Chennai Institute of Technology placement department provides training to the students. This includes soft skills training, leadership training, communication training, etc. 
+       Do you have any queries???
+  utter_median_salary:
+  - text: |-
+      Chennai Institute of Technology placement median salary for 2019-20 was 4.2 lakhs per annum. 
+       Do you have any queries???
+  utter_total_students:
+  - text: 'The total student enrollment at CIT Chennai is more than 2500. '
+  utter_submit:
+  - text: |-
+      The Staff will contact you soon regarding admisssion
+      Do you have any other queries???
+  utter_signup_slots:
+  - text: |-
+      Okay your admission for {asname} will be contacted soon through {cnumber}.
+      Would you like to ask anything else?
+  utter_ask_asname:
+  - text: What is the Student's Name?
+  utter_ask_cnumber:
+  - text: What is your Mobile Number?
+  utter_ask_ecourse:
+  - text: What course are you looking forward to joining here?
+  utter_ask_dboard:
+  - text: Which Board of Studies is the student is from?
+  utter_ask_flocation:
+  - text: Please enter your location(City, State)
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+actions:
+- utter_submit
+- utter_signup_slots
+- utter_ask_asname
+- utter_ask_cnumber
+- utter_ask_ecourse
+- utter_ask_dboard
+- utter_ask_flocation
+- action_store_csv
+forms:
+  signup_form:
+    required_slots:
+      asname:
+      - entity: asname
+        type: from_entity
+      cnumber:
+      - entity: cnumber
+        type: from_entity
+      dboard:
+      - entity: dboard
+        type: from_entity
+      ecourse:
+      - entity: ecourse
+        type: from_entity
+      flocation:
+      - entity: flocation
+        type: from_entity
+e2e_actions: []

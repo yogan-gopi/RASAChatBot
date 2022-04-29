@@ -1,0 +1,148 @@
+version: "2.0"
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+- story: cit type
+  steps:
+  - intent: affirm
+  - action: utter_help
+  - intent: cit_type
+  - action: utter_cittype
+- story: cit pg
+  steps:
+  - intent: affirm
+  - action: utter_help
+  - intent: cit_pg
+  - action: utter_citpg
+- story: cit ug
+  steps:
+  - intent: affirm
+  - action: utter_help
+  - intent: cit_ug
+  - action: utter_citug
+- story: cit scholarship
+  steps:
+  - intent: affirm
+  - action: utter_help
+  - intent: cit_scholarship
+  - action: utter_citscholarship
+- story: cit_be
+  steps:
+  - intent: affirm
+  - action: utter_help
+  - intent: be
+  - action: utter_be/btech
+- story: cit_pgjoining
+  steps:
+  - intent: affirm
+  - action: utter_help
+  - intent: pgcourse
+  - action: utter_pgcourse
+- story: cit_training
+  steps:
+  - intent: affirm
+  - action: utter_help
+  - intent: training
+  - action: utter_training
+- story: cit_mediansalary
+  steps:
+  - intent: affirm
+  - action: utter_help
+  - intent: median_salary
+  - action: utter_median_salary
+- story: cit_totalstudents
+  steps:
+  - intent: help
+  - action: utter_help
+  - intent: total_students
+  - action: utter_total_students
+- story: denying
+  steps:
+  - intent: deny
+  - action: utter_happy
+- story: form_sign_up
+  steps:
+  - intent: signup
+  - action: signup_form
+  - active_loop: signup_form
+  - slot_was_set:
+    - requested_slot: sname
+  - slot_was_set:
+    - asname: Yogan
+  - intent: inform
+    entities:
+    - asname: Yogan
+  - action: signup_form
+  - slot_was_set:
+    - asname: Yogan
+  - action: signup_form
+  - slot_was_set:
+    - cnumber: '1092473856'
+  - intent: inform
+    entities:
+    - cnumber: '1092473856'
+  - action: signup_form
+  - slot_was_set:
+    - cnumber: '1092473856'
+  - slot_was_set:
+    - ecourse: it
+  - intent: inform
+    entities:
+    - ecourse: it
+  - action: signup_form
+  - slot_was_set:
+    - ecourse: it
+  - slot_was_set:
+    - dboard: cbse
+  - intent: inform
+    entities:
+    - dboard: cbse
+  - action: signup_form
+  - slot_was_set:
+    - dboard: cbse
+  - slot_was_set:
+    - flocation: kolkatta
+  - intent: inform
+    entities:
+    - flocation: kolkatta
+  - action: signup_form
+  - active_loop: null
+  - slot_was_set:
+    - flocation: kolkatta
+  - action: action_store_csv
+  - action: utter_signup_slots
+- story: Story from Conversation ID 0236866434ab44cda70cfdcf17a22a83
+  steps:
+  - active_loop: signup_form
+  - slot_was_set:
+    - requested_slot: asname
+  - intent: cit_pg
+    entities:
+    - pg: PG courses
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_default_fallback
