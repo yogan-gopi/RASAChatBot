@@ -1,0 +1,149 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- cit_type:
+    use_entities: true
+- ug_courses:
+    use_entities: true
+- pg_courses:
+    use_entities: true
+- cit_scholarship:
+    use_entities: true
+- accreditation:
+    use_entities: true
+- tt_cit:
+    use_entities: true
+- cit_placement:
+    use_entities: true
+- cit_package:
+    use_entities: true
+- cit_strength:
+    use_entities: true
+- contact_staff:
+    use_entities: true
+- info_form:
+    use_entities: true
+
+entities:
+- cit_type
+- ug_courses
+- pg_courses
+- cit_scholarship
+- accreditation
+- tt_cit
+- cit_placement
+- cit_package
+- cit_strength
+- contact_staff
+- asname
+- bnumber
+- cboard
+- dcutoff
+- elocation  
+
+slots:
+  asname:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  bnumber:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  cboard:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  dcutoff:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  elocation:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+
+responses:
+
+  utter_greet:
+  - text: "Welcome to CIT, How can I help you today??"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_help:
+  - text: How can I help you?
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_cit_type:
+  - text: ""
+
+actions:
+- utter_submit
+- utter_signup_slots
+- utter_ask_asname
+- utter_ask_bnumber
+- utter_ask_cboard
+- utter_ask_dcutoff
+- utter_ask_elocation
+- action_store_csv
+
+forms:
+  signup_form:
+    required_slots:
+      asname:
+      - entity: asname
+        type: from_entity
+      bnumber:
+      - entity: bnumber
+        type: from_entity
+      cboard:
+      - entity: cboard
+        type: from_entity
+      dcutoff:
+      - entity: dcutoff
+        type: from_entity
+      elocation:
+      - entity: elocation
+        type: from_entity
+e2e_actions: []
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

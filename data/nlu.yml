@@ -1,0 +1,195 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+
+- intent: cit_type
+  examples: |
+    - Is CIT a [private](cit_type) instituion?
+    - Is cit a [deemed university](cit_type)?
+    - cit a [autonomous](cit_type) college?
+    - does CIT [come under IIT?](cit_type)
+    - is chennai institute a [public](cit_type) college?
+    - is cit a [government college](cit_type)?
+    - Does chennai institute of technology [come under anna university](cit_type)?
+
+
+- intent: ug_courses
+  examples: |
+    - does CIT offer any [UG courses](ug_courses)?
+    - do chennai institute of technology teach any [ug courses](ug_courses)?
+    - what [undergraduate courses](ug_courses) are offered in cit?
+    - how many [under graduate degrees](ug_courses) are taught at chennai institute?
+    - are there any [ug degrees](ug_courses) provided at CIT?
+    - are [ug degrees](ug_courses) being taught at cit?
+
+
+- intent: pg_courses
+  examples: |
+    - does cit offer [pg courses](pg_courses)?
+    - what are the [pg degrees](pg_courses) offered by chennai institute of technology? 
+    - are [postgraduate courses](pg_courses) provided in CIT?
+    - How many [post graduate degrees](pg_courses) does Chennai Institute offer?
+    - name the [pg courses](pg_courses) taught in CIT?
+    - what [courses] does cit teach?    
+    - different [courses](pg_courses) offered in cit?
+
+
+- intent: cit_scholarship
+  examples: |
+    - What [scholarships](cit_scholarship) are provided for students of CIT?
+    - Do merit students get [scholarship](cit_scholarship) at CIT chennai?
+    - are [government scholarships](cit_scholarship) offered to students of chennai institute of technology?
+    - any [scholarships](cit_scholarship) offered for cit students?
+    - What is the procedure to get [scholarship](cit_scholarships)?
+    - CIT Chennai [scholarships](cit_scholarships) for students?
+
+
+- intent: accreditation
+  examples: |
+    - what are the [accredited courses](accreditation) courses in cit?
+    - are all degrees offered by cit [accredited](accreditation)?
+    - what are the courses with [NBA accreditation](accreditation) in Chennai Institute of Technology?
+    - is [nba accreditation](accreditation) available for degrees taught at cit?
+    - does CIT have course [accreditation](accreditation) for provided courses?
+    - What degrees taught at cit have [NBA accreditation](accreditation)?
+    - cit courses with [accreditation](accreditation)
+  
+
+- intent: tt_cit
+  examples: |
+    - are students provided with any [technical training](tt_cit)?
+    - how does cit [prepare students for industry](tt_cit)?
+    - are chennai institute [students provided with industry knowledge](tt_cit)?
+    - what help is provided CIT students to gain [engineering knowledge](tt_cit)?
+    - how does cit have [train students for engineering industry](tt_cit)?
+    - what is [taught outside of academics](tt_cit) at CIT Chennai?
+    - does Chennai institute [provide industrial training](tt_cit) for students?
+
+
+- intent: cit_placement
+  examples: |
+    - What is the [placement record](cit_placement) of chennai institute of technology
+    - Does cit have good [placement history](cit_placement)?
+    - do students of CIT [get placed](cit_placement) after degree completion?
+    - Can CIT students get job through [campus interview](cit_placement)?
+    - do good [companies recruit](cit_placement) at Chennai Institute?
+    - how much [percentage of graduates placed](cit_placement) at companies?
+
+
+- intent: cit_package 
+  examples: |
+    - What is the [median salary](cit_package) of placed students of cit?
+    - How much [salary](cit_package) do CIT chennai graduates get at average?
+    - What is the [average salary](cit_package) of placed students at cit?
+    - how is the [package](cit_package) of CIT pass outs?
+    - does studying in cit get you a [well paying](cit_package) job? 
+    - is cit campus interview [packages](cit_package) good?
+
+
+- intent: cit_strength 
+  examples: |
+    - What is the [total strength](cit_strength) of CIT?
+    - [How many students study](cit_strength) at Chennai Institute of Technology?
+    - what is the [student count](cit_strength) of cit chennai?
+    - does cit chennai have [high student count](cit_strength)?
+    - what is the [crowd](cit_strength) of Chennai Institute?
+
+
+- intent: contact_staff
+  examples: |
+    - How do I [apply for CIT](contact_staff)?
+    - How to [apply for b.tech](contact_staff) courses at Chennai Institute of Technology?
+    - Can i apply for [CIT through TNEA](contact_staff)
+    - How to [apply for b.e](contact_staff) courses at Chennai Institute of Technology?
+    - can I get into [CIT through management](contact_staff)?
+    - Is there [entrance exam for CIT](contact_staff) admission?
+    - What is the [cutoff required for CIT](contact_staff) admission?
+    - I want to talk to a staff about [admission process](contact_staff)
+    - Can I talk to a [faculty regarding admission](contact_staff)?
+    - I want to [talk to a real person](contact_staff)
+    - May I speak to a staff [regarding admission](contact_staff)?
+
+
+- intent: info_form 
+  examples: |
+    - The [student name is Kavin](asname)
+    - [Lohith](asname)
+    - [Vasanth](asname) is the student name
+    - contact number is [1029384756](bnumber)
+    - [1029392010](bnumber)
+    - [5647390129](bnumber)
+    - my [contact no is 9445869203](bnumber)
+    - board of education is [CBSE](cboard)
+    - my board of education is [Metriculation](cboard)
+    - the board of education is [state board](cboard)
+    - [metric](cboard)
+    - [other](cboard)
+    - [cbse](cboard)
+    - [state board](cboard) education
+    - my cutoff is [169.5](dcutoff)
+    - student cutoff is [193](dcutoff)
+    - cutoff is [132.35](dcutoff)
+    - [186](dcutoff)
+    - [143.75](dcutoff)
+    - I live in [Chennai, Tamilnadu](elocation)
+    - I'm from [Thengasi, Tamilnadu](elocation)
+    - [Mumbai, Maharashtra](elocation)
+    - [Kakinada, Andhra Pradesh](elocation)
+    - I come from [Madurai, Tamilnadu](elocation)
+
+ 
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
