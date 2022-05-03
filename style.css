@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    }
+    .header{
+        background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(citpic.jpg);
+        height:250px;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+	    position: relative;
+    }
+nav{
+display:flex;
+padding: 2% 6%;
+justify-content: flex-end;
+align-items: center;
+}
+
+nav-links{
+flex: 1;
+text-align: right;
+}
+.nav-links ul li{
+list-style: none;
+display: inline-block;
+padding: 8px 12px;
+position: relative;
+}
+.nav-links ul li a{
+color: #fff;
+text-decoration: none;
+font-size: 13px;
+}
+.nav-links ul li::after{
+content:'';
+width: 0%;
+height: 2px;
+background: #f44336;
+display: block;
+margin: auto;
+transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+width: 100%;
+}
+
+.clg{
+width: 80%;
+margin: auto;
+text-align: center;
+padding-top: 100px;
+}
