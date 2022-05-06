@@ -29,116 +29,111 @@ stories:
   - intent: affirm
   - action: utter_help
   - intent: cit_type
-  - action: utter_cittype
-- story: cit pg
+  - action: utter_cit_type
+- story: ug courses
   steps:
   - intent: affirm
   - action: utter_help
-  - intent: cit_pg
-  - action: utter_citpg
-- story: cit ug
+  - intent: ug_courses
+  - action: utter_ug_courses
+
+- story: pg courses
   steps:
   - intent: affirm
   - action: utter_help
-  - intent: cit_ug
-  - action: utter_citug
+  - intent: ug_courses
+  - action: utter_pg_courses
+
 - story: cit scholarship
   steps:
   - intent: affirm
   - action: utter_help
   - intent: cit_scholarship
-  - action: utter_citscholarship
-- story: cit_be
+  - action: utter_cit_scholarship
+- story: accreditation
   steps:
   - intent: affirm
   - action: utter_help
-  - intent: be
-  - action: utter_be/btech
-- story: cit_pgjoining
+  - intent: accreditation
+  - action: utter_accreditation
+- story: tt cit
   steps:
   - intent: affirm
   - action: utter_help
-  - intent: pgcourse
-  - action: utter_pgcourse
-- story: cit_training
+  - intent: tt_cit
+  - action: utter_tt_cit
+- story: cit placement
   steps:
   - intent: affirm
   - action: utter_help
-  - intent: training
-  - action: utter_training
-- story: cit_mediansalary
+  - intent: cit_placement
+  - action: utter_cit_placement
+- story: cit package
   steps:
   - intent: affirm
   - action: utter_help
-  - intent: median_salary
-  - action: utter_median_salary
-- story: cit_totalstudents
+  - intent: cit_package
+  - action: utter_cit_package
+
+- story: cit strength
   steps:
-  - intent: help
+  - intent: affirm
   - action: utter_help
-  - intent: total_students
-  - action: utter_total_students
+  - intent: cit_strength
+  - action: utter_cit_strength
 - story: denying
   steps:
   - intent: deny
   - action: utter_happy
+
 - story: form_sign_up
   steps:
   - intent: signup
   - action: signup_form
   - active_loop: signup_form
   - slot_was_set:
-    - requested_slot: sname
+    - requested_slot: asname
   - slot_was_set:
-    - sname: Yogan
+    - asname: Vasanth
   - intent: inform
     entities:
-    - sname: Yogan
+    - asname: Vasanth
   - action: signup_form
   - slot_was_set:
-    - sname: Yogan
-  - slot_was_set:
-    - pname: kumar
-  - intent: inform
-    entities:
-    - pname: kumar
+    - asname: Vasanth
   - action: signup_form
   - slot_was_set:
-    - pname: kumar
-  - slot_was_set:
-    - number: '1092473856'
+    - bnumber: '1092473856'
   - intent: inform
     entities:
-    - number: '1092473856'
+    - bnumber: '1092473856'
   - action: signup_form
   - slot_was_set:
-    - number: '1092473856'
+    - bnumber: '1092473856'
   - slot_was_set:
-    - course: it
+    - cboard: 'CBSE'
   - intent: inform
     entities:
-    - course: it
+    - cboard: 'CBSE'
   - action: signup_form
   - slot_was_set:
-    - course: it
+    - cboard: 'CBSE'
   - slot_was_set:
-    - board: cbse
+    - dcutoff: '160'
   - intent: inform
     entities:
-    - board: cbse
+    - dcutoff: '160'
   - action: signup_form
   - slot_was_set:
-    - board: cbse
+    - dcutoff: '160'
   - slot_was_set:
-    - location: kolkatta
+    - elocation: '[Chennai, Tamilnadu]'
   - intent: inform
     entities:
-    - location: kolkatta
+    - elocation: '[Chennai, Tamilnadu]'
   - action: signup_form
   - active_loop: null
   - slot_was_set:
-    - location: kolkatta
+    - elocation: '[Chennai, Tamilnadu]'
   - action: action_store_csv
   - action: utter_signup_slots
-
-

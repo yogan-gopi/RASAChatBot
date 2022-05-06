@@ -5,205 +5,160 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- signup:
-    use_entities: true
-- inform:
-    use_entities: true
 - greet:
     use_entities: true
 - goodbye:
-    use_entities: true
-- affirm:
-    use_entities: true
-- deny:
     use_entities: true
 - mood_great:
     use_entities: true
 - mood_unhappy:
     use_entities: true
-- cit_type:
+- affirm:
     use_entities: true
-- cit_pg:
-    use_entities: true
-- cit_ug:
-    use_entities: true
-- cit_scholarship:
-    use_entities: true
-- be/btech:
-    use_entities: true
-- pgcourse:
-    use_entities: true
-- training:
-    use_entities: true
-- median_salary:
-    use_entities: true
-- total_students:
+- deny:
     use_entities: true
 - bot_challenge:
     use_entities: true
-- help:
+- cit_type:
     use_entities: true
-- be:
+- ug_courses:
     use_entities: true
-- be_btech:
+- pg_courses:
     use_entities: true
-- restart:
+- cit_scholarship:
+    use_entities: true
+- accreditation:
+    use_entities: true
+- tt_cit:
+    use_entities: true
+- cit_placement:
+    use_entities: true
+- cit_package:
+    use_entities: true
+- cit_strength:
+    use_entities: true
+- signup:
+    use_entities: true
+- inform:
     use_entities: true
 entities:
-- ctype
-- pg
-- citug
-- scholarships
-- salary
-- strength
-- pgadmission
-- training
-- be_admission
-- sname
-- pname
-- number
-- course
-- board
-- location
-- admission
+- cit_type
+- ug_courses
+- pg_courses
+- cit_scholarship
+- accreditation
+- tt_cit
+- cit_placement
+- cit_package
+- cit_strength
+- signup
+- asname
+- bnumber
+- cboard
+- dcutoff
+- elocation
 slots:
-  sname:
+  asname:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
     influence_conversation: true
-  pname:
+  bnumber:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
     influence_conversation: true
-  number:
+  cboard:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
     influence_conversation: true
-  course:
+  dcutoff:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
     influence_conversation: true
-  board:
+  elocation:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
     influence_conversation: true
-  location:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: true
-  requested_slot:
-    type: rasa.shared.core.slots.UnfeaturizedSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: false
+
 responses:
   utter_greet:
-  - text: Welcome to CIT, How can I help you today?
+  - text: "Welcome to CIT, How can I help you today"
   utter_cheer_up:
-  - image: https://i.imgur.com/nGF1K8f.jpg
-    text: 'Here is something to cheer you up:'
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
   utter_did_that_help:
-  - text: Did that help you?
+  - text: "Did that help you?"
   utter_happy:
-  - text: Great, carry on!
+  - text: "Great, carry on!"
   utter_goodbye:
-  - text: Bye
+  - text: "Bye"
   utter_help:
-  - text: How can I help you?
-  utter_cittype:
-  - text: |-
-      Chennai Institute of Technology is a private college, approved under UGC and AICTE. It is affiliated under Anna University. 
-      Do you have any queries???
-  utter_citpg:
-  - text: |-
-      CIT Chennai offers ME in three specialisations, namely CAD/ CAM, Applied Electronics and CSE in the PG level. 
-      Do you have any queries???
-  utter_citug:
-  - text: |-
-      CIT Chennai UG courses include BE and BTech. There are a lot of specialisations for these courses like BE in Mechanical Engineering, Computer Science and Engineering, Electronics and Communication Engineering, Electrical and Electronics Engineering, Mechatronics Engineering, Civil Engineering, Bio medical Engineering, and BTech in Information Technology, Artificial Intelligence and Data Science, and Computer Science and Business Systems. 
-      Do you have any queries???
-  utter_citscholarship:
-  - text: |-
-      Chennai Institute of Technology scholarships are of two types. One is on the basis of CIT Chennai Scholarship Test and the other is based on class 12th marks. 
-      Do you have any queries???
-  utter_be/btech:
-  - text: |-
-      To apply for the BE/ BTech programme at Chennai Institute of Technology, candidates need to have passed Class 12 with a 50% aggregate along with TNEA score.
-       Do you have any queries???
-  utter_pgcourse:
-  - text: |-
-      CIT Chennai admission process starts with eligible candidates appearing for TANCET. The candidates who clear the cut off have to apply for CIT Chennai admission and appear for TANCA counselling. 
-       Do you have any queries???
-  utter_training:
-  - text: |-
-      Chennai Institute of Technology placement department provides training to the students. This includes soft skills training, leadership training, communication training, etc. 
-       Do you have any queries???
-  utter_median_salary:
-  - text: |-
-      Chennai Institute of Technology placement median salary for 2019-20 was 4.2 lakhs per annum. 
-       Do you have any queries???
-  utter_total_students:
-  - text: |-
-      The total student enrollment at CIT Chennai is more than 2500. 
-       Do you have any queries???
-  utter_submit:
-  - text: |-
-      The Staff will contact you soon regarding admisssion
-      Do you have any other queries???
-  utter_signup_slots:
-  - text: |-
-      Okay your admission for {sname} will be contacted soon through {number}.
-      Do you have any other queries???
-  utter_ask_sname:
-  - text: What is the Student's Name?
-  utter_ask_pname:
-  - text: What is the Parent's/ Guardian's Name?
-  utter_ask_number:
-  - text: What is your Mobile Number?
-  utter_ask_course:
-  - text: What course are you looking forward to joining here?
-  utter_ask_board:
-  - text: Which Board of Studies is the student is from?
-  utter_ask_location:
-  - text: Please enter your location(City, State)
+  - text: "How can I help you?"
   utter_iamabot:
-  - text: I am a bot, powered by Rasa.
+  - text: "I am a bot, powered by Rasa."
+  utter_cit_type:
+  - text: "Chennai Institute of Technology is a Private Institute affiliated to Anna University and is a co-educational engineering college located at Kundrathur, Chennai, Tamil Nadu"
+  utter_ug_courses:
+  - text: "CIT offers,B.E courses of the following streams; Computer Science, Mechanical , ECE, EEE, Mechatronics, Civil and Bio Medical.B.Tech courses of the following streams; Information Technology, Artificial Intelligence & Data Science, Computer Science and Business Systems"
+  utter_pg_courses:
+  - text: "CIT offers the following pg programmes; M.E. Applied Electronics, M.E. CAD/CAM and M.E. Computer Science and Engineering"
+  utter_cit_scholarship:
+  - text: "The college provides scholarship of up to 50% to 100% fees waiver for students depending on their 12th performance through Parthasarathy Seeniammal Educational Trust. A fee waiver is provided on transportation as well as accommodation based on the cut-off. Along with this government scholarships provided for SC, ST and BC communities, scholarship for women and tuition fee waiver for first graduate students"
+  utter_accreditation:
+  - text: "Chennai Institute of Technology has been approved by the AICTE, New Delhi and UGC. CIT has NBA Accredited courses. And is under the 201 to 250 in the NIRF 2021 ranking belt."
+  utter_tt_cit:
+  - text: "Chennai Institute of Technology placement department provides world class industrial training to the students. The training aims to prepare the students in developing their soft skills, leadership qualities and aptitude skills along with industry expected technical knowledge in various tools and programming languages."
+  utter_cit_placement:
+  - text: "Placement opportunities range from local, national to international companies who will visit CIT campus to recruit young engineers, from all disciplines, on an annual basis. CIT has a placement record of 92% till March 2020. And several students have been placed in well renowned companies such as PEGA Systems, ZOHO, INFOSYS, VERIZON, HCL Technologies, etc..."
+  utter_cit_package:
+  - text: "The median salary of the students of CIT Chennai after graduation is 4.20 lakhs with the highest package got being 22 lakhs."
+  utter_cit_strength:
+  - text: "Chennai Institute hosts around 2500 students with an average intake of 930 students per year."
+  utter_signup_slots:
+  - text: "Okay regarding admission for {asname} you will soon be contacted through {bnumber}."
+  utter_submit:
+  - text: "Would you like to know anything else?"
+  utter_ask_asname:
+  - text: "To learn more about admission at CIT, answer the following questions. What is the Student's Name?"
+  utter_ask_bnumber:
+  - text: "Provide the mobile number for us to contact you"
+  utter_ask_cboard:
+  - text: "What board of study is the student from?"
+  utter_ask_dcutoff:
+  - text: "What is the student's cutoff?"
+  utter_ask_elocation:
+  - text: "Please enter your location(City, State)"
 actions:
 - utter_submit
 - utter_signup_slots
-- utter_ask_sname
-- utter_ask_pname
-- utter_ask_number
-- utter_ask_course
-- utter_ask_board
-- utter_ask_location
+- utter_ask_asname
+- utter_ask_bnumber
+- utter_ask_cboard
+- utter_ask_dcutoff
+- utter_ask_elocation
 - action_store_csv
+
 
 forms:
   signup_form:
     required_slots:
-      board:
-      - entity: board
+      asname:
+      - entity: asname
         type: from_entity
-      course:
-      - entity: course
+      bnumber:
+      - entity: bnumber
         type: from_entity
-      location:
-      - entity: location
+      cboard:
+      - entity: cboard
         type: from_entity
-      number:
-      - entity: number
+      dcutoff:
+      - entity: dcutoff
         type: from_entity
-      pname:
-      - entity: pname
-        type: from_entity
-      sname:
-      - entity: sname
+      elocation:
+      - entity: elocation
         type: from_entity
 e2e_actions: []

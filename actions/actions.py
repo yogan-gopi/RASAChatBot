@@ -38,19 +38,18 @@ class ActionStoreCSV(Action):
      def run(self, dispatcher: CollectingDispatcher,
              tracker: Tracker,
              domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        sname=tracker.get_slot("sname")
-        pname=tracker.get_slot("pname")
-        number=tracker.get_slot("number")
-        board=tracker.get_slot("board")
-        course=tracker.get_slot("course")
-        location=tracker.get_slot("location")
+        asname=tracker.get_slot("asname")
+        bnumber=tracker.get_slot("bnumber")
+        cboard=tracker.get_slot("cboard")
+        dcutoff=tracker.get_slot("dcutoff")
+        elocation=tracker.get_slot("elocation")
         
         with open('info.csv', 'a') as info:
-            fieldnames = ['sname', 'pname', 'number', 'board', 'course', 'location']
+            fieldnames = ['asname', 'bnumber', 'cboard', 'dcutoff', 'elocation']
             
             csv_writer = csv.writer(info, delimiter='\t')
             
-            row=[sname,pname,number,board,course,location]
+            row=[asname,bnumber,cboard,dcutoff,elocation]
             csv_writer.writerow(row)
         return []
 
