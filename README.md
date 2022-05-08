@@ -1,6 +1,6 @@
 #Commands
-    rasa train
-    rasa shell
-    rasa run actions
-    rasa run -m models --enable-api --cors "*"
-    
+
+1) rasa train
+2) rasa shell
+3) rasa run actions
+4) rasa run -m models --enable-api --cors "*"
