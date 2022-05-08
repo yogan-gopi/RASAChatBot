@@ -39,9 +39,7 @@ stories:
 
 - story: pg courses
   steps:
-  - intent: affirm
-  - action: utter_help
-  - intent: ug_courses
+  - intent: pg_courses
   - action: utter_pg_courses
 
 - story: cit scholarship
@@ -58,8 +56,6 @@ stories:
   - action: utter_accreditation
 - story: tt cit
   steps:
-  - intent: affirm
-  - action: utter_help
   - intent: tt_cit
   - action: utter_tt_cit
 - story: cit placement
